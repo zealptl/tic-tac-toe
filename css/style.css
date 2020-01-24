@@ -59,21 +59,32 @@ body {
 .cell.circle {
   cursor: not-allowed;
 }
-
 .cell.x::before,
 .cell.x::after {
+  background-color: #000;
+}
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  background-color: #ddd;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
   content: "";
   position: absolute;
-  background-color: #000;
   width: calc(var(--mark-size) * 0.15);
   height: var(--mark-size);
 }
 
-.cell.cell.x::before {
+.cell.x::before,
+.board.x .cell.cell:not(.x):not(.circle):hover::before {
   transform: rotate(45deg);
 }
 
-.cell.cell.x::after {
+.cell.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
 
