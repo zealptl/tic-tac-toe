@@ -6,6 +6,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  font-size: 20px;
 }
 
 :root {
@@ -110,4 +111,39 @@ body {
   width: calc(var(--mark-size) * 0.7);
   height: calc(var(--mark-size) * 0.7);
   background-color: #fff;
+}
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 350%;
+}
+
+.winning-message button {
+  font-size: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+}
+
+.winning-message button:hover {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid lightskyblue;
+}
+
+.winning-message.show {
+  display: flex;
 }
